@@ -37,7 +37,7 @@
             <input name="input" type="number" ng-model="customValue" max="125"/>
           </div>
           <span ng-show="!progressBarForm.$valid" class="red mt20 mb20">The value should be less or equal than $125</span>
-          <button ng-disabled="!progressBarForm.$valid" ng-click="toggleModal('Your Progress')" class="btn btn-default">Show Your Progress</button>
+          <button ng-mouseover="toggleModal('Your Progress')" ng-disabled="!progressBarForm.$valid" ng-click="toggleModal('Your Progress')" class="btn btn-default">Show Your Progress</button>
 
         </form>
       </section>
@@ -56,7 +56,7 @@
           </span> You need ${{maxValue - customValue}} to reach your Target</span>
         </div>
 
-        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button  type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
       </modal>
 
     </div>
