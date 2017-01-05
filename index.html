@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8">
+    <title>Progress Bar Demo - Gorilla Logic</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/custom.css" media="screen">
+    <script src="https://use.fontawesome.com/2738232d8a.js"></script>
+
+
+    <!-- JS library -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
+    <script src="js/main.js"></script>
+
+
+  </head>
+  <body ng-controller="Controller">
+
+    <div class="container" >
+      <section class="header mb20">
+        <h1>My Account</h1>
+      </section>
+
+      <section class="control-area mb20" >
+        <form name="progressBarForm">
+          <label class="block-label mb20 mt20">
+            <input type="checkbox" ng-model="checked"/>
+            Use Custom Value
+          </label>
+
+          <div class="dynamic-box mb20" ng-hide="!checked">
+            <input name="input" type="number" ng-model="customValue" max="125"/>
+          </div>
+          <span ng-show="!progressBarForm.$valid" class="red mt20 mb20">The value should be less or equal than $125</span>
+          <button ng-disabled="!progressBarForm.$valid" ng-click="toggleModal('Your Progress')" class="btn btn-default">Show Your Progress</button>
+
+        </form>
+      </section>
+
+
+      <section class="footer">
+
+      </section>
+      <modal visible="showModal">
+        <div class="progress-section mb20">
+          <uib-progressbar class="progress-striped active" max="maxValue" value="customValue" type="danger"><i> ${{customValue}} / ${{maxValue}}</i></uib-progressbar>
+        </div>
+        <hr>
+        <div class="info block-label mb20">
+          <span> <i class="fa fa-info-circle" aria-hidden="true"></i>
+          </span> You need ${{maxValue - customValue}} to reach your Target</span>
+        </div>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+      </modal>
+
+    </div>
+
+  </body>
+</html>

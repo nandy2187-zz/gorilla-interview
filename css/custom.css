@@ -1,0 +1,31 @@
+.header {
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: #cccccc
+}
+.red {
+  color: red;
+  display: block;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.block-label {
+  display: block;
+}
+
+.target-value {
+  font-size: 17px;
+  font-weight: lighter;
+}
+.target-label {
+  font-size: 15px;
+  font-weight: bold;
+}
